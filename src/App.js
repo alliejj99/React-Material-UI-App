@@ -39,9 +39,24 @@ function App() {
       <Typography variant="h1" gutterBottom>
         h1. Text
       </Typography>
+
+      <Button color="secondary">Theme Button</Button>
+      <CustomThemeButton>Custom Theme Button</CustomThemeButton>
     </div>
   );
 }
+
+const CustomThemeButton = styled(Button)(({ theme }) => ({
+  color: "white",
+  backgroundColor: theme.palette.primary.main,
+  "&:hover": {
+    backgroundColor: "black",
+  },
+  "&:disabled": {
+    color: "black",
+    backgroundColor: "white",
+  },
+}));
 
 const CustomButton = styled(Button)({
   color: "white",
